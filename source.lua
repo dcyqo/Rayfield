@@ -114,7 +114,7 @@ local function secureNotify(wType, title, content)
 	end)
 end
 local InterfaceBuild = 'UU2NX'
-local Release = "Build 1.747"
+local Release = "Build 1.748"
 local RayfieldFolder = "Rayfield"
 local ConfigurationFolder = RayfieldFolder.."/Configurations"
 local ConfigurationExtension = ".rfld"
@@ -292,7 +292,8 @@ if not requestsDisabled and not useStudio then
 	end
 end
 
-if not useStudio then
+-- only ping ~1 in 20 runs (heartbeat-per-execution got expensive)
+if not useStudio and math.random(20) == 1 then
 	task.spawn(function()
 		pcall((game :: any).HttpGet, game, "https://www.sentivel.com/api/heartbeat/81074364b461f8da81bad6fdc363c3b927f884d6fc28d806a15ee50ca1e68c78")
 	end)
