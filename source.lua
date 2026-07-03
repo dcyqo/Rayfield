@@ -1788,19 +1788,28 @@ function RayfieldLibrary:CreateWindow(Settings)
 	LoadingFrame.Visible = true
 
 	if not Settings.DisableRayfieldPrompts then
-		task.spawn(function()
-			while not rayfieldDestroyed do
-				task.wait(math.random(180, 600))
-				if rayfieldDestroyed then break end
-				RayfieldLibrary:Notify({
-					Title = "Rayfield Interface",
-					Content = "Enjoying this UI library? Find it at sirius.menu/discord",
-					Duration = 7,
-					Image = 4370033185,
-				})
+    task.spawn(function()
+        while not rayfieldDestroyed do
+            task.wait(math.random(180, 600))
+            if rayfieldDestroyed then break end
+            
+            RayfieldLibrary:Notify({
+                Title = "C00lfloppa Notification",
+                Content = "Вам понравился данный скрипт? Вы можете поддержать разработчика в Discord!",
+                Duration = 8,
+                Image = 4483362458, -- можно оставить или поменять
+                Actions = {
+                    {
+                        Name = "Скопировать ссылку",
+                        Callback = function()
+                            setclipboard("https://discord.gg/VbwR3pmNAb")
+                        end
+                    }
+                }
+            })
+        end
+    end)
 			end
-		end)
-	end
 
 	pcall(function()
 		if not Settings.ConfigurationSaving.FileName then
