@@ -1,12 +1,8 @@
 --[[
 
 	Rayfield Interface Suite
-	by Sirius
+	by Kotfloppa
 
-	shlex  | Designing + Programming
-	iRay   | Programming
-	Max    | Programming
-	Damian | Programming
 
 ]]
 
