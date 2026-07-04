@@ -12,7 +12,7 @@ local HttpService = getService("HttpService")
 -- (e.g. by the sirius-gate gateway-injected analytics path), there's no outer
 -- scope binding `_getgenv` — bare `_getgenv()` calls would resolve to nil and
 -- the pcall would swallow the failure, silently zeroing secureMode + customAssetId
--- on every gateway-injected event. source.lua does the same capture at its top.
+-- on every gateway-injected event. source.lua does the same capture at its top..
 local _getgenv = getgenv or rawget(_G, "getgenv")
 
 -- ── SHA-256 (pure Luau) — privacy-focused one-way hash of UserId ─────────────
